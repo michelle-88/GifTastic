@@ -19,8 +19,16 @@ function renderButtons(){
 }
 
 // Click listener for search button. This function will take value from input field and add it to topics array.
+$("#add-button").on("click", function(event){
+    event.preventDefault();
+    var newTopic = $("#search-input").val().trim();
+    topics.push(newTopic);
+    renderButtons();
+});
 
 // Click listener for dynamically created buttons. This will run the function to display gifs.
+
+
 
 // Call renderButtons function to display buttons for initial topics on page load
 renderButtons();
