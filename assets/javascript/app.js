@@ -1,5 +1,5 @@
 // Declare initial array of search terms
-var topics = ["Harry Potter", "Hogwarts", "Dumbledore", "Wizard"];
+var topics = ["Harry Potter", "Hogwarts", "Dumbledore", "Quidditch"];
 
 // Function to pull data from API and display gifs on index page
 function displayGifs(){
@@ -17,7 +17,7 @@ function displayGifs(){
         for (var i = 0; i <= 10; i++){
             // Variables to store divs, img tags, and p tags created for each gif
             var gifDiv = $("<div>");
-            var imgTag = $("<img>");
+            var imgTag = $("<img class='gif'>");
             var p = $("<p>");
 
             // Variables for the gif data pulled from the API
@@ -27,6 +27,7 @@ function displayGifs(){
 
             // Take gif urls from API and set them as attributes for img tags
             imgTag.attr("src", stillSrc);
+            imgTag.attr("data-state", "still");
             imgTag.attr("data-still", stillSrc);
             imgTag.attr("data-animate", animateSrc);
 
@@ -70,9 +71,20 @@ $("#add-button").on("click", function(event){
 // Click listener for dynamically created buttons. This will run the function to display gifs.
 $(document).on("click", ".gif-button", displayGifs);
 
-// Click listener to switch img src attr and animate or pause gif
+// Click listener to switch img src attr which will animate or pause gif
+$(document).on("click", ".gif", function(){
+    var state = $(this).attr("data-state");
+    
+    if(state === "still"){
+        $(this).attr("src", $(this).attr("data-animate"));
+        $(this).attr("data-state", "animate");
+    }
+    else {
+        $(this).attr("src", $(this).attr("data-still"));
+        $(this).attr("data-state", "still");
+    }
 
-
+});
 
 // Call renderButtons function to display buttons for initial topics on page load
 renderButtons();
