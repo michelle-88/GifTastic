@@ -1,7 +1,48 @@
 // Declare initial array of search terms
-var topics = ["Harry Potter", "Hogwarts", "pumpkin juice", "wizard"];
+var topics = ["Harry Potter", "Hogwarts", "Dumbledore", "Wizard"];
 
 // Function to pull data from API and display gifs on index page
+function displayGifs(){
+    // Grab data-name attr from dynamically created buttons and insert into url for AJAX call
+    var searchTerm = $(this).attr("data-name");    
+    var queryUrl = "https://api.giphy.com/v1/gifs/search?api_key=69eSDlUWow5cNxDj4CgJGcpXBkgyjCPj&limit=10&q=" + searchTerm;
+
+    // AJAX call to Giphy API. Need to pull static & animated urls, rating
+    $.ajax({
+        url: queryUrl,
+        method: "GET"
+    }).then(function(response){
+        console.log(response);
+        // Loop through 10 responses to append each gif to index page
+        for (var i = 0; i <= 10; i++){
+            // Variables to store divs, img tags, and p tags created for each gif
+            var gifDiv = $("<div>");
+            var imgTag = $("<img>");
+            var p = $("<p>");
+
+            // Variables for the gif data pulled from the API
+            var rating = response.data[i].rating;
+            var stillSrc = response.data[i].images.fixed_height_still.url;
+            var animateSrc = response.data[i].images.fixed_height.url;
+
+            // Take gif urls from API and set them as attributes for img tags
+            imgTag.attr("src", stillSrc);
+            imgTag.attr("data-still", stillSrc);
+            imgTag.attr("data-animate", animateSrc);
+
+            // Add rating data to p tag
+            p.text("Rating: " + rating);
+
+            // Attach newly created img tag and p tag to a div
+            gifDiv.append(imgTag);
+            gifDiv.append(p);
+
+            // Attach gif/rating div to overall gif div on index page
+            $("#gif-div").prepend(gifDiv);
+        }
+
+    });
+}
 
 // Function to create buttons from user search input
 function renderButtons(){
@@ -27,6 +68,9 @@ $("#add-button").on("click", function(event){
 });
 
 // Click listener for dynamically created buttons. This will run the function to display gifs.
+$(document).on("click", ".gif-button", displayGifs);
+
+// Click listener to switch img src attr and animate or pause gif
 
 
 
