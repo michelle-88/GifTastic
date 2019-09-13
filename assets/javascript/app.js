@@ -14,7 +14,7 @@ function displayGifs(){
     }).then(function(response){
         console.log(response);
         // Loop through 10 responses to append each gif to index page
-        for (var i = 0; i <= 10; i++){
+        for (var i = 0; i < response.data.length; i++){
             // Variables to store divs, img tags, and p tags created for each gif
             var gifDiv = $("<div>");
             var imgTag = $("<img class='gif'>");
