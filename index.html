@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Gif Magic</title>
+    <title>Gif Magic!</title>
 
     <!-- Link to jQuery CDN -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -13,7 +13,21 @@
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    
+
+<!-- Div for dynamically created buttons -->
+<div id="buttons-div"></div>
+
+<!-- Form for gif search field -->
+<form id="gif-search-form">
+    <label for="search-input">Search for Magical Gifs!</label>
+    <input type="text" id="search-input">
+    <br>
+    <input id="add-button" type="submit" value="Accio Gifs">
+</form>
+
+<!-- Div for gifs returned for each search -->
+<div id="gif-div"></div> 
+
     <script src="assets/javascript/app.js"></script>
 </body>
 </html>
