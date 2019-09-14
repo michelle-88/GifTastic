@@ -1,5 +1,10 @@
 body  {
-    background-color: #512da8;
+    background-color: #4a148c;
+}
+
+p {
+    font-size: 1.3rem;
+    margin-top: 0;
 }
 
 #gif-div {
@@ -12,4 +17,25 @@ body  {
 
 #buttons-div button{
     margin: 10px;
+}
+
+.input-field label {
+    color: #424242;
+    font-size: 1.3rem;
+}
+
+#search-input {
+    border-bottom: 1px solid #424242;
+    box-shadow: 0 1px 0 0 #000;
+}
+
+#search-input:focus {
+    border-bottom: 1px solid #000;
+    box-shadow: 0 1px 0 0 #000;
+}
+
+.container{
+    background-image: url(../images/hogwarts-pattern.jpg);
+    background-size: contain;
+    min-height: 100vh;
 }
