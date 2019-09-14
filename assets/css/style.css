@@ -1,9 +1,11 @@
 body  {
-    background-color: #4a148c;
+    background-image: url(../images/magic-pattern.jpg);
+    background-size: contain;
 }
 
 p {
     font-size: 1.3rem;
+    color: white;
     margin-top: 0;
 }
 
@@ -26,22 +28,21 @@ p {
 }
 
 .input-field label {
-    color: #424242;
+    color: white;
     font-size: 1.3rem;
 }
 
 #search-input {
-    border-bottom: 1px solid #424242;
+    border-bottom: 1px solid white;
     box-shadow: 0 1px 0 0 #000;
 }
 
 #search-input:focus {
-    border-bottom: 1px solid #000;
+    border-bottom: 1px solid white;
     box-shadow: 0 1px 0 0 #000;
 }
 
 .container{
-    background-image: url(../images/hogwarts-pattern.jpg);
-    background-size: contain;
+    background-color: #4a148c;
     min-height: 100vh;
 }

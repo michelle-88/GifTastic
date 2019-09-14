@@ -53,7 +53,7 @@ function renderButtons(){
     // Loop through topics array and create button for each index
     for (var i = 0; i < topics.length; i++){
         var btn = $("<button>");
-        btn.addClass("gif-button btn waves-effect waves-light purple darken-2");
+        btn.addClass("gif-button btn waves-effect waves-light yellow darken-3");
         btn.attr("data-name", topics[i]);
         btn.text(topics[i]);
         $("#buttons-div").append(btn);
