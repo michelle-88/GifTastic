@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,34 +10,44 @@
     <!-- Link to jQuery CDN -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-     <!-- Link to Materialize CDN -->
-     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> -->
+    <!-- Link to Materialize CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
 
     <!-- Link to external stylesheet -->
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
+
 <body>
+    <div class="row">
+        <div class="col s12 m4 l3">
+            <!-- Form for gif search field -->
+            <form id="gif-search-form">
+                <div class="input-field">
+                <label for="search-input">Search for Magical Gifs!</label>
+                <input type="text" class="white-text" id="search-input">
+                <br>
+                <button id="add-button" type="submit" class="btn waves-effect waves-light">Accio Gifs
+                <i class="material-icons left">flash_on</i>
+                </button>
+                </div>
+            </form>
 
-<div class="container">
-<!-- Div for dynamically created buttons -->
-<div id="buttons-div"></div>
+            <!-- Div for dynamically created buttons -->
+            <div id="buttons-div"></div>
+        </div>
 
-<!-- Form for gif search field -->
-<form id="gif-search-form">
-    <label for="search-input">Search for Magical Gifs!</label>
-    <input type="text" id="search-input">
-    <br>
-    <input id="add-button" type="submit" value="Accio Gifs">
-</form>
-
-<!-- Div for gifs returned for each search -->
-<div id="gif-div"></div> 
-
-</div>
+        <div class="col s12 m8 l9">
+            <!-- Div for gifs returned for each search -->
+            <div id="gif-div"></div>
+        </div>
+    </div>
 
     <script src="assets/javascript/app.js"></script>
 
     <!-- Compiled and minified JavaScript for Materialize -->
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </body>
+
 </html>
