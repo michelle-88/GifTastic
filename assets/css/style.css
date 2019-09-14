@@ -2,3 +2,14 @@ body  {
     background-color: #512da8;
 }
 
+#gif-div {
+    margin-top: 50px;
+}
+
+#buttons-div {
+    margin-top: 30px;
+}
+
+#buttons-div button{
+    margin: 10px;
+}
