@@ -65,6 +65,7 @@ $("#add-button").on("click", function(event){
     event.preventDefault();
     var newTopic = $("#search-input").val().trim();
     topics.push(newTopic);
+    $("#search-input").val("");
     renderButtons();
 });
 
@@ -88,5 +89,3 @@ $(document).on("click", ".gif", function(){
 
 // Call renderButtons function to display buttons for initial topics on page load
 renderButtons();
-
-
